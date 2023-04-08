@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { KnexModule } from 'nest-knexjs';
+import { UserModule } from './user/user.module';
+import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     KnexModule.forRootAsync({
@@ -18,6 +20,8 @@ import { KnexModule } from 'nest-knexjs';
         },
       }),
     }),
+    UserModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
